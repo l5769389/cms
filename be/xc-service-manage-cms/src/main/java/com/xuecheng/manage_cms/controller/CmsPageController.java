@@ -3,7 +3,10 @@ package com.xuecheng.manage_cms.controller;
 import com.xuecheng.api.cms.CmsPageControllerApi;
 import com.xuecheng.framework.domain.cms.CmsPage;
 import com.xuecheng.framework.domain.cms.request.QueryPageRequest;
+import com.xuecheng.framework.domain.cms.response.CmsCode;
 import com.xuecheng.framework.domain.cms.response.CmsPageResult;
+import com.xuecheng.framework.exception.ExceptionCast;
+import com.xuecheng.framework.model.response.CommonCode;
 import com.xuecheng.framework.model.response.QueryResponseResult;
 import com.xuecheng.manage_cms.service.CmsPageService;
 import io.swagger.annotations.ApiOperation;
@@ -37,7 +40,7 @@ public class CmsPageController implements CmsPageControllerApi {
     @GetMapping("/get/{id}")
     public CmsPage findById(@PathVariable("id") String id) {
         CmsPage byId = cmsPageService.findById(id);
-        return  byId;
+        return byId;
     }
 
     @Override
