@@ -36,7 +36,6 @@ public class ExceptionCatch {
     @ExceptionHandler(Exception.class)
     public ResponseResult unknownException(Exception exception){
         LOGGER.error("catch exception {}",exception.getMessage());
-
         ResultCode resultCode = EXCEPTIONMAP.get(exception.getClass());
         if (resultCode!=null){
             return new ResponseResult(resultCode);
